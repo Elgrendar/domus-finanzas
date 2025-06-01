@@ -1,0 +1,285 @@
+/* VARIABLES CSS: Colores para modo oscuro por defecto */
+:root {
+  /* Sidebar */
+  --sidebar-bg: #212529;              /* Fondo sidebar oscuro */
+  --sidebar-color: #ddd;              /* Texto e iconos sidebar oscuro */
+  --sidebar-border: #444;             /* Bordes sidebar oscuro */
+  --sidebar-hover-color: #0d6efd;    /* Hover texto sidebar */
+  --sidebar-hover-bg: rgba(13, 110, 253, 0.1); /* Hover fondo sidebar */
+
+  /* Navbar */
+  --navbar-bg: #212529;               /* Fondo navbar oscuro */
+  --navbar-color: #ddd;               /* Texto navbar oscuro */
+
+  /* Main content */
+  --main-bg: #121212;                 /* Fondo principal oscuro */
+  --main-color: #eee;                 /* Texto principal oscuro */
+
+  /* Footer */
+  --footer-bg: #212529;
+  --footer-color: #ddd;
+}
+
+/* VARIABLES CSS: Sobrescribir para modo claro */
+body.light-mode {
+  /* Sidebar */
+  --sidebar-bg: #f8f9fa;
+  --sidebar-color: #212529;
+  --sidebar-border: #ccc;
+  --sidebar-hover-color: #0d6efd;
+  --sidebar-hover-bg: rgba(13, 110, 253, 0.15);
+
+  /* Navbar */
+  --navbar-bg: #f8f9fa;
+  --navbar-color: #212529;
+
+  /* Main content */
+  --main-bg: #fff;
+  --main-color: #212529;
+
+  /* Footer */
+  --footer-bg: #f8f9fa;
+  --footer-color: #212529;
+}
+
+/* ===== ESTILOS GENERALES ===== */
+
+/* Body con fondo y color de texto usando variables */
+body {
+  background-color: var(--main-bg);
+  color: var(--main-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Dropdown menu (modo oscuro) */
+body:not(.light-mode) .dropdown-menu {
+  background-color: var(--navbar-bg);
+  color: var(--navbar-color);
+  border-color: var(--sidebar-border);
+}
+
+body:not(.light-mode) .dropdown-item {
+  color: var(--navbar-color);
+}
+
+body:not(.light-mode) .dropdown-item:hover {
+  background-color: var(--sidebar-hover-bg);
+  color: var(--sidebar-hover-color);
+}
+
+/* Dropdown menu (modo claro, opcional si querés que sea igual al navbar) */
+body.light-mode .dropdown-menu {
+  background-color: var(--navbar-bg);
+  color: var(--navbar-color);
+}
+
+body.light-mode .dropdown-item {
+  color: var(--navbar-color);
+}
+
+body.light-mode .dropdown-item:hover {
+  background-color: var(--sidebar-hover-bg);
+  color: var(--sidebar-hover-color);
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--navbar-bg) !important;
+  color: var(--navbar-color) !important;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 56px; /* altura navbar */
+  bottom: 0;
+  left: 0;
+  width: 250px;
+  background-color: var(--sidebar-bg);
+  color: var(--sidebar-color);
+  border-right: 1px solid var(--sidebar-border);
+  overflow-x: hidden;
+  transition: width 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  z-index: 1040;
+}
+
+/* Sidebar minimizada */
+.sidebar.minimized {
+  width: 4.5rem;
+}
+
+/* Sidebar oculta */
+.sidebar.hidden {
+  width: 2.2rem;
+  overflow: hidden;
+  border-left: 1px solid var(--sidebar-border);
+}
+
+/* Ocultar texto y centrar iconos sidebar oculta */
+.sidebar.hidden .nav-link span.text {
+  display: none;
+}
+.sidebar.hidden .nav-link i {
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+
+/* Enlaces sidebar */
+.sidebar .nav-link {
+  color: var(--sidebar-color);
+  font-size: 0.95rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+/* Ocultar texto en sidebar minimizada */
+.sidebar.minimized .nav-link span.text {
+  display: none;
+}
+
+/* Hover enlaces */
+.sidebar .nav-link:hover {
+  color: var(--sidebar-hover-color);
+  background-color: var(--sidebar-hover-bg);
+}
+
+/* Iconos dentro nav-link */
+.sidebar .nav-link i {
+  font-size: 1.25rem;
+  min-width: 1.5rem;
+  text-align: center;
+}
+
+/* Botones control sidebar */
+.sidebar-controls {
+  display: flex;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  padding: 0.5rem 0.7rem;
+  border-top: 1px solid var(--sidebar-border);
+  margin-top: auto;
+  z-index: 1100;
+}
+
+.sidebar-controls button {
+  color: var(--sidebar-color);
+  background: transparent;
+  border: none;
+  padding: 0.4rem;
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.sidebar-controls button:hover {
+  color: var(--sidebar-hover-color);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.sidebar-controls button i {
+  font-size: 0.7rem;
+  pointer-events: none;
+}
+
+/* Margen del contenido principal para dejar espacio a sidebar */
+.main-content {
+  margin-left: 250px;
+  transition: margin-left 0.3s ease;
+}
+
+/* Ajustes cuando sidebar minimizada o oculta */
+.sidebar.minimized ~ .main-content {
+  margin-left: 4.5rem;
+}
+
+.sidebar.hidden ~ .main-content {
+  margin-left: 2.5rem;
+}
+
+/* Responsive: Pantallas pequeñas */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 2.5rem;
+  }
+
+  .sidebar ~ .main-content {
+    margin-left: 2.5rem;
+  }
+
+  .sidebar .nav-link span.text {
+    display: none;
+  }
+}
+
+/* Switch modo oscuro/claro */
+.theme-switcher {
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--sidebar-color);
+  transition: color 0.3s ease;
+}
+
+/* Checkbox oculto */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+/* Slider */
+.switch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.slider {
+  position: relative;
+  width: 40px;
+  height: 20px;
+  background-color: var(--sidebar-border);
+  border-radius: 20px;
+  transition: background-color 0.4s;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 2px;
+  top: 2px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.4s;
+}
+
+.switch input:checked + .slider {
+  background-color: var(--sidebar-hover-color);
+}
+
+.switch input:checked + .slider::before {
+  transform: translateX(20px);
+}
+

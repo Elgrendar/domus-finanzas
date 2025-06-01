@@ -1,0 +1,88 @@
+/* Fuentes base */
+:root {
+    --font-heading: 'Cinzel', serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'Roboto Mono', monospace;
+
+    /* Paleta de colores */
+    --color-background: #F4F4F4;
+    --color-primary: #2A4D69;
+    --color-secondary: #D4AF37;
+    --color-text: #2E2E2E;
+    --color-success: #4CAF50;
+    --color-danger: #D9534F;
+
+    /* Otros */
+    --border-radius: 0.5rem;
+    --transition-speed: 0.3s;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-body);
+    background-color: var(--color-background);
+    color: var(--color-text);
+}
+
+/* Encabezados */
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: var(--font-heading);
+    color: var(--color-primary);
+}
+
+/* Botones */
+.btn {
+    font-family: var(--font-body);
+    padding: 0.6rem 1.2rem;
+    border-radius: var(--border-radius);
+    border: none;
+    cursor: pointer;
+    transition: background var(--transition-speed);
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #1e364f;
+}
+
+.btn-success {
+    background-color: var(--color-success);
+    color: white;
+}
+
+.btn-danger {
+    background-color: var(--color-danger);
+    color: white;
+}
+
+/* Saldos / cifras */
+.saldo {
+    font-family: var(--font-mono);
+    font-size: 1.1rem;
+}
+
+.saldo.positivo {
+    color: var(--color-success);
+}
+
+.saldo.negativo {
+    color: var(--color-danger);
+}
+
+/* Tarjetas / cuadros */
+.card {
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+
