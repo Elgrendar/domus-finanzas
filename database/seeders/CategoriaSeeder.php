@@ -19,6 +19,7 @@ class CategoriaSeeder extends Seeder
                 'tipo_categoria' => 'gasto',
                 'icono' => 'bi bi-fork-knife',
                 'color' => '#FF5733',
+                'estado' => 'activa',
             ],
             [
                 'nombre' => 'Transporte',
@@ -26,6 +27,7 @@ class CategoriaSeeder extends Seeder
                 'tipo_categoria' => 'gasto',
                 'icono' => 'bi bi-bus-front',
                 'color' => '#33C3FF',
+                'estado' => 'activa',
             ],
             [
                 'nombre' => 'Salario',
@@ -33,6 +35,7 @@ class CategoriaSeeder extends Seeder
                 'tipo_categoria' => 'ingreso',
                 'icono' => 'bi bi-receipt',
                 'color' => '#28A745',
+                'estado' => 'activa',
             ],
             [
                 'nombre' => 'Ventas',
@@ -40,6 +43,7 @@ class CategoriaSeeder extends Seeder
                 'tipo_categoria' => 'ingreso',
                 'icono' => 'bi bi-basket',
                 'color' => '#FFC107',
+                'estado' => 'activa',
             ],
         ];
 

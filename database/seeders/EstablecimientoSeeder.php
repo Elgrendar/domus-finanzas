@@ -20,6 +20,7 @@ class EstablecimientoSeeder extends Seeder
                 'email' => 'central@herbolario.com',
                 'tipo_establecimiento' => 'Tienda física',
                 'descripcion' => 'Sucursal principal con productos naturales',
+                'estado' => 'activa',
             ],
             [
                 'nombre' => 'Green Market Online',
@@ -28,6 +29,7 @@ class EstablecimientoSeeder extends Seeder
                 'email' => 'contacto@greenmarket.com',
                 'tipo_establecimiento' => 'Tienda online',
                 'descripcion' => 'Tienda virtual de productos orgánicos',
+                'estado' => 'activa',
             ],
         ];
 

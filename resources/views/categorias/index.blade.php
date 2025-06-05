@@ -40,12 +40,18 @@
                                 </td>
                                 <td>
                                     @if ($categoria->color)
-                                        <div class="color-box mt-2" style="width: 20px; height: 20px; background-color: {{ $categoria->color }};"></div>
+                                        <div class="color-box mt-2"
+                                            style="width: 20px; height: 20px; background-color: {{ $categoria->color }};">
+                                        </div>
                                     @else
                                         Sin color
                                     @endif
                                 </td>
-                                <td>{{ $categoria->estado }}</td>
+                                <td>
+                                    <span class="badge bg-{{ $categoria->estado === 'activa' ? 'success' : 'secondary' }}">
+                                        {{ ucfirst($categoria->estado) }}
+                                    </span>
+                                </td>
                                 <td class="text-end">
                                     <a href="{{ route('categorias.edit', $categoria) }}" class="btn btn-sm btn-warning">
                                         <i class="bi bi-pencil-square"></i>

@@ -44,8 +44,8 @@ class SubcategoriaController extends Controller
             'icono' => 'nullable|string|max:255', // Para el icono
             'categoria_id' => 'required|exists:categorias,id', // Aseguramos que la categoría exista
         ]);
-        // Convertimos el checkbox a string 'activo' o 'inactivo'
-        $estado = $request->has('estado') ? 'activo' : 'inactivo';
+        // Convertimos el checkbox a string 'activa' o 'inactiva'
+        $estado = $request->has('estado') ? 'activa' : 'inactiva';
 
         Subcategoria::create($request->only('nombre', 'tipo_subcategoria', 'descripcion', 'color', 'icono', 'categoria_id') + ['estado' => $estado]);
 
@@ -82,8 +82,8 @@ class SubcategoriaController extends Controller
             'icono' => 'nullable|string|max:255', // Para el icono
             'categoria_id' => 'required|exists:categorias,id', // Aseguramos que la categoría exista
         ]);
-        // Convertimos el checkbox a string 'activo' o 'inactivo'
-        $estado = $request->has('estado') ? 'activo' : 'inactivo';
+        // Convertimos el checkbox a string 'activa' o 'inactiva'
+        $estado = $request->has('estado') ? 'activa' : 'inactiva';
 
         $subcategoria->update($request->only('nombre', 'tipo_subcategoria', 'descripcion', 'color', 'icono', 'categoria_id') + ['estado' => $estado]);
 

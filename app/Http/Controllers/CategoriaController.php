@@ -27,8 +27,8 @@ class CategoriaController extends Controller
             'color' => 'nullable|string|max:7', // Para el color hexadecimal
             'icono' => 'nullable|string|max:255', // Para el icono
         ]);
-        // Convertimos el checkbox a string 'activo' o 'inactivo'
-        $estado = $request->has('estado') ? 'activo' : 'inactivo';
+        // Convertimos el checkbox a string 'activa' o 'inactiva'
+        $estado = $request->has('estado') ? 'activa' : 'inactiva';
         // Creamos la categoría con los datos del request y el estado
         Categoria::create($request->only('nombre', 'tipo_categoria', 'descripcion', 'color', 'icono') + ['estado' => $estado]);
 
@@ -50,7 +50,7 @@ class CategoriaController extends Controller
             'icono' => 'nullable|string|max:255', // Para el icono
         ]);
         // Convertimos el checkbox a string 'activo' o 'inactivo'
-        $estado = $request->has('estado') ? 'activo' : 'inactivo';
+        $estado = $request->has('estado') ? 'activa' : 'inactiva';
 
         $categoria->update($request->only('nombre', 'tipo_categoria', 'descripcion', 'color', 'icono') + ['estado' => $estado]);
 

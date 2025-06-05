@@ -49,7 +49,9 @@
                                     @endif
                                 </td>
                                 <td>
-                                    {{ $subcategoria->estado }}
+                                    <span class="badge bg-{{ $subcategoria->estado === 'activa' ? 'success' : 'secondary' }}">
+                                        {{ ucfirst($subcategoria->estado) }}
+                                    </span>
                                 </td>
                                 <td class="text-end">
                                     <a href="{{ route('subcategorias.edit', $subcategoria) }}"

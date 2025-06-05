@@ -30,6 +30,7 @@ class SubcategoriaSeeder extends Seeder
                 'icono' => 'bi bi-shop',
                 'color' => '#FF8C00',
                 'tipo_subcategoria' => 'gasto',
+                'estado' => 'activa'
             ],
             [
                 'nombre' => 'Restaurantes',
@@ -38,6 +39,7 @@ class SubcategoriaSeeder extends Seeder
                 'icono' => 'bi bi-fork-knife',
                 'color' => '#FFB347',
                 'tipo_subcategoria' => 'gasto',
+                'estado' => 'activa'
             ],
             [
                 'nombre' => 'Transporte público',
@@ -46,6 +48,7 @@ class SubcategoriaSeeder extends Seeder
                 'icono' => 'bi bi-train-front',
                 'color' => '#5DADE2',
                 'tipo_subcategoria' => 'gasto',
+                'estado' => 'activa'
             ],
             [
                 'nombre' => 'Salario mensual',
@@ -54,6 +57,7 @@ class SubcategoriaSeeder extends Seeder
                 'icono' => 'bi bi-briefcase',
                 'color' => '#58D68D',
                 'tipo_subcategoria' => 'ingreso',
+                'estado' => 'activa'
             ],
         ];
 

@@ -13,10 +13,10 @@ class FormaDePagoSeeder extends Seeder
     public function run(): void
     {
         $formas = [
-            ['nombre' => 'Efectivo', 'tipo_pago' => 'contado', 'descripcion' => 'Pago directo en efectivo'],
-            ['nombre' => 'Tarjeta de crédito', 'tipo_pago' => 'bancario', 'descripcion' => 'Pago mediante tarjeta de crédito'],
-            ['nombre' => 'Transferencia bancaria', 'tipo_pago' => 'bancario', 'descripcion' => 'Pago por transferencia'],
-            ['nombre' => 'Bizum', 'tipo_pago' => 'móvil', 'descripcion' => 'Pago móvil con Bizum'],
+            ['nombre' => 'Efectivo', 'tipo_pago' => 'contado', 'descripcion' => 'Pago directo en efectivo','estado' => 'activa'],
+            ['nombre' => 'Tarjeta de crédito', 'tipo_pago' => 'bancario', 'descripcion' => 'Pago mediante tarjeta de crédito','estado' => 'activa'],
+            ['nombre' => 'Transferencia bancaria', 'tipo_pago' => 'bancario', 'descripcion' => 'Pago por transferencia','estado' => 'activa'],
+            ['nombre' => 'Bizum', 'tipo_pago' => 'móvil', 'descripcion' => 'Pago móvil con Bizum','estado' => 'activa'],
         ];
 
         foreach ($formas as $forma) {
