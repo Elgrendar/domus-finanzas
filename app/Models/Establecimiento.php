@@ -18,4 +18,9 @@ class Establecimiento extends Model
         'descripcion',
         'estado',
     ];
+
+    public function movimientos()
+    {
+        return $this->hasMany(Movimiento::class, 'establecimiento_id');
+    }
 }

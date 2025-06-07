@@ -17,5 +17,15 @@ class Categoria extends Model
         'color',
         'estado',
     ];
+
+    public function subcategorias()
+    {
+        return $this->hasMany(Subcategoria::class);
+    }
+
+    public function movimientos()
+    {
+        return $this->hasMany(Movimiento::class, 'categoria_id');
+    }
 }
 

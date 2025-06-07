@@ -1,69 +1,105 @@
-Domus Finanzas
+# Domus Finanzas
 
-Domus Finanzas es una aplicación web desarrollada con Laravel orientada al control de economía doméstica. Es un proyecto gratuito y sin ánimo de lucro, creado como práctica de desarrollo, ideal para quienes buscan aprender y gestionar sus finanzas de forma simple y organizada.
+> Domus Finanzas es una aplicación web desarrollada con Laravel orientada al control de economía doméstica. Es un proyecto **gratuito y sin ánimo de lucro**, creado como práctica de desarrollo, ideal para quienes buscan aprender y gestionar sus finanzas de forma simple y organizada.
 
-Este proyecto está en fase activa de desarrollo, y se aceptan con gusto ideas, sugerencias y mejoras. ¡Anímate a probarlo!
+Este proyecto está en **fase activa de desarrollo**, y se aceptan con gusto ideas, sugerencias y mejoras. ¡Anímate a probarlo!
 
-🌟 Características principales
+---
 
-Panel de control con acceso rápido a categorías, ingresos y gastos.
+## 🌟 Características principales
 
-CRUD completo de Categorías (tipificadas como "ingreso" o "gasto").
+- Panel de control con acceso rápido a categorías, ingresos y gastos.
+- CRUD completo de Categorías (tipificadas como "ingreso" o "gasto").
+- Estados activos/inactivos para categorías.
+- Selector de color y asignación de iconos personalizados.
+- Filtro de categorías activas en subcategorías.
+- Responsive design con barra lateral adaptativa.
+- Mensajes de éxito y validación de formularios.
+- Diseño uniforme basado en **Bootstrap**.
+- CRUD completo de Establecimientos y Formas de Pago con control de estado.
+- CRUD completo de Movimientos con relación a cuentas, formas de pago, categorías y subcategorías.
+- **Filtrado dinámico** entre categorías y subcategorías (JS).
+- **Autocompletado** de categoría según subcategoría seleccionada.
+- Parcial reutilizable de formulario para movimientos.
+- JavaScript modularizado.
 
-Estados activos/inactivos para categorías.
+---
 
-Selector de color y asignación de iconos personalizados.
+## 🧪 Funcionalidades en desarrollo
 
-Filtro de categorías activas en subcategorías.
+- 📄 Vista `show` para detalle completo de movimientos.
+- 🔐 Sistema de autenticación y roles (login/logout).
+- 🧮 Gestión de cuentas con saldos y cálculo automático.
+- 📊 Panel de estadísticas y gráficos.
+- 🧾 Generación de informes PDF con DomPDF.
+- 🎨 Tema claro/oscuro con switcher en la navegación.
 
-Responsive design con barra lateral adaptativa.
+---
 
-Mensajes de éxito y validación de formularios.
+## 🔮 Próximas mejoras
 
-Diseño con Bootstrap.
+- 🔁 Movimientos recurrentes.
+- 🏷️ Sistema de etiquetas para categorías.
+- 📂 Exportación e importación de datos.
+- 🔍 Filtros avanzados por fechas, importes, etc.
+- 🌐 Multiusuario con gestión de accesos y seguridad.
 
-Gestión de cajas y seguimiento de movimientos (en desarrollo).
+---
 
-Generación de informes PDF con DomPDF (en desarrollo).
+## 🚀 Instalación local (modo desarrollo)
 
-Tema claro/oscuro con switcher accesible en la barra de navegación (en desarrollo).
+1. Clona el repositorio:
 
-Sistema de etiquetas para categorías (futuro).
+   ```bash
+   git clone https://github.com/Elgrendar/domus-finanzas.git
+   cd domus-finanzas
+   ```
 
-Exportación e importación de datos (futuro).
+2. Instala dependencias:
 
-Sistema de autenticación (login/logout) (futuro).
+   ```bash
+   composer install
+   npm install && npm run dev
+   ```
 
-🚀 Instalación local (en desarrollo)
+3. Configura el entorno:
 
-Clona el repositorio:
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
 
-git clone https://github.com/Elgrendar/domus-finanzas.git
-cd domus-finanzas
+4. Configura tu base de datos en `.env` y ejecuta migraciones:
 
-Instala las dependencias:
+   ```bash
+   php artisan migrate
+   php artisan serve
+   ```
 
-composer install
-npm install && npm run dev
+---
 
-Crea el archivo .env:
+## 📈 Estado actual
 
-cp .env.example .env
-php artisan key:generate
+El proyecto ya cuenta con:
 
-Configura tu base de datos en .env y luego ejecuta:
+- Gestión completa de Categorías, Subcategorías, Establecimientos y Formas de Pago.
+- CRUD de Movimientos con enlaces a todos los modelos relacionados.
+- Validaciones robustas en formularios.
+- Interfaz responsiva moderna.
+- Lógica interactiva con JavaScript personalizado para formularios dinámicos.
+- Control de estado activo/inactivo para modelos clave.
 
-php artisan migrate
-php artisan serve
+---
 
-📈 Estado del proyecto
+## ✨ Contribuciones
 
-Este proyecto está en etapa de desarrollo. Las funcionalidades principales están siendo implementadas de forma progresiva. Se busca crear una herramienta sencilla, pero potente para la gestión financiera doméstica.
+Cualquier sugerencia, corrección o mejora es bienvenida. Puedes abrir un issue para compartir tus ideas o realizar un pull request.
 
-✨ Cualquier sugerencia, corrección o mejora es bienvenida. Puedes abrir un issue para compartir tus ideas.
+---
 
-🔒 Licencia
+## 🔒 Licencia
 
-Este proyecto está licenciado bajo la Licencia MIT con la siguiente condición adicional:
+Este proyecto está licenciado bajo la **Licencia MIT**, con la siguiente condición adicional:
 
-Cualquier redistribución del código, total o parcial, deberá incluir atribución clara al autor original: @Elgrendar. Para más información sobre el autor, visita www.rafacampanero.es.
+> Cualquier redistribución del código, total o parcial, deberá incluir atribución clara al autor original: **@Elgrendar**.  
+> Para más información sobre el autor, visita: [www.rafacampanero.es](https://www.rafacampanero.es)

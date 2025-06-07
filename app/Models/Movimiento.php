@@ -31,4 +31,19 @@ class Movimiento extends Model
     {
         return $this->belongsTo(FormaDePago::class, 'forma_pago_id');
     }
+
+    public function categoria()
+    {
+        return $this->belongsTo(Categoria::class);
+    }
+
+    public function subcategoria()
+    {
+        return $this->belongsTo(Subcategoria::class);
+    }
+
+    public function establecimiento()
+    {
+        return $this->belongsTo(Establecimiento::class);
+    }
 }

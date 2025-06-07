@@ -23,4 +23,9 @@ class Subcategoria extends Model
     {
         return $this->belongsTo(Categoria::class);
     }
+
+    public function movimientos()
+    {
+        return $this->hasMany(Movimiento::class, 'subcategoria_id');
+    }
 }

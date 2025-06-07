@@ -28,4 +28,15 @@ class Cuenta extends Model
     {
         return $this->belongsTo(User::class, 'usuario_id');
     }
+
+    public function movimientos()
+    {
+        return $this->hasMany(Movimiento::class, 'cuenta_id');
+    }
+
+    public function formaPagos()
+    {
+        return $this->hasMany(FormaDePago::class, 'cuenta_id');
+    }
+
 }
