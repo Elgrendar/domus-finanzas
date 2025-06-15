@@ -29,7 +29,7 @@ class CuentaSeeder extends Seeder
             'moneda' => 'EUR',
             'descripcion' => 'Cuenta principal del banco X',
             'estado' => 'activa',
-            'usuario_id' => $usuario->id,
+            'user_id' => $usuario->id,
             'saldo_actual' => 1000.00,
             'limite_credito' => 500.00,
             'numero_cuenta' => 'ES7620770024003102575766',

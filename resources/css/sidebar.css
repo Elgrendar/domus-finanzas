@@ -86,7 +86,7 @@ body.light-mode .dropdown-item:hover {
 }
 
 /* Navbar */
-.navbar {
+.navbar , .navbar a{
   background-color: var(--navbar-bg) !important;
   color: var(--navbar-color) !important;
   transition: background-color 0.3s ease, color 0.3s ease;

@@ -1,6 +1,6 @@
 @extends('layouts.base')
 
-@section('title', 'Editar Subcategorías')
+@section('title', 'Subcategorías')
 
 @section('contenido')
     <div class="container-fluid py-4">

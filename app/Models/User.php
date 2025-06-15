@@ -20,6 +20,8 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'imagen', //estaran guardados los nombres de las imagenes en la carpeta public/imagenes/usuarios
+        'estado', //activa o inactiva
         'password',
     ];
 

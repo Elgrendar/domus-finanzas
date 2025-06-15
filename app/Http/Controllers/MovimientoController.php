@@ -90,4 +90,5 @@ class MovimientoController extends Controller
         Movimiento::findOrFail($id)->delete();
         return redirect()->route('movimientos.index')->with('success', 'Movimiento eliminado con éxito.');
     }
+
 }

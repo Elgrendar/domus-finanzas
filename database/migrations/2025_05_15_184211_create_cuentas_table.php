@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('moneda');
             $table->string('descripcion')->nullable();
             $table->string('estado')->default('activa');
-            $table->foreignId('usuario_id')->constrained('users')->onDelete('cascade');
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->decimal('saldo_actual', 10, 2)->default(0);
             $table->decimal('limite_credito', 10, 2)->default(0);
             $table->string('numero_cuenta')->unique();

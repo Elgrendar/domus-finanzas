@@ -46,4 +46,28 @@ class Movimiento extends Model
     {
         return $this->belongsTo(Establecimiento::class);
     }
+    /**
+     * Obtiene el total de ingresos del mes actual.
+     *
+     * @return float
+     */
+
+    public static function ingresosEsteMes()
+    {
+        return Movimiento::where('tipo_movimiento', 'ingreso')
+            ->whereMonth('fecha', now()->month)
+            ->sum('importe');
+    }
+
+    /**
+     * Obtiene el total de gastos del mes actual.
+     *
+     * @return float
+     */
+    public static function gastosEsteMes()
+    {
+        return Movimiento::where('tipo_movimiento', 'gasto')
+            ->whereMonth('fecha', now()->month)
+            ->sum('importe');
+    }
 }

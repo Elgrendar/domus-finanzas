@@ -24,9 +24,9 @@ class Cuenta extends Model
         'banco',
     ];
 
-    public function usuario()
+    public function user()
     {
-        return $this->belongsTo(User::class, 'usuario_id');
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     public function movimientos()
@@ -38,5 +38,22 @@ class Cuenta extends Model
     {
         return $this->hasMany(FormaDePago::class, 'cuenta_id');
     }
+    /**
+     * Obtiene el total de saldo actual para una cuenta específica o para todas.
+     * * @param int|null $cuentaId
+     * @return float
+     */
+    public static function saldoTotal($cuentaId = null)
+    {
+        if ($cuentaId) {
+            $cuenta = Cuenta::find($cuentaId);
+            if ($cuenta) {
+                return $cuenta->saldo_actual;
+            }
+            return 0.0; // Si no se encuentra la cuenta, retorna 0
+        }
 
+        // Si no se proporciona un ID de cuenta, retorna el saldo total de todas las cuentas
+        return Cuenta::sum('saldo_actual');
+    }
 }

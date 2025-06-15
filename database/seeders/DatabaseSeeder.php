@@ -13,11 +13,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        // Usuario::factory(10)->create();
 
         User::factory()->create([
-            'name' => 'Rafa Campanero',
-            'email' => 'info@rafacampanero.es',
+            'name' => 'Administrador',
+            'email' => 'admin@localhost.com',
+            'password' => '$2y$12$Jpr6UZ8x4AP8Um8cugQzX.hFeBs28oipi9cwWhXbtJBxkEb015IqK',//HASH of administrator
         ]);
         $this->call([
             FormaDePagoSeeder::class,
